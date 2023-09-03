@@ -39,7 +39,9 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.cors().and().csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("{userName}/forgot","/register","/signIn","/moviebooking/search/**","/moviebooking/all","/v3/api-docs/**","/swagger-ui/**","https://moviebookingapplicationbackendnew.azurewebsites.net/**").permitAll()
+		.requestMatchers("https://moviebookingapplicationbackendnew.azurewebsites.net/**").permitAll()
+
+                // .requestMatchers("{userName}/forgot","/register","/signIn","/moviebooking/search/**","/moviebooking/all","/v3/api-docs/**","/swagger-ui/**","https://moviebookingapplicationbackendnew.azurewebsites.net/**").permitAll()
                 .and()
                 .authorizeHttpRequests().requestMatchers("/**")
                 .authenticated().and()
