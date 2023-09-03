@@ -30,6 +30,11 @@ public class CustomerController {
 
     Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
+    @GetMapping("/test")
+    public String test(){
+        return "hii";
+    }
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@Valid @RequestBody Customer customer) throws MethodArgumentNotValidException {
         try {
